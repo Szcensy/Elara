@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Elara - Confirmation</title>
+<title>Dr. Elara - Ready</title>
 <style>body {
   margin: 0;
   padding: 0;
@@ -54,25 +54,10 @@ h1 {
   100% { transform: rotate(2deg); }
 }
 
-ul {
-  text-align: left;
-  margin-bottom: 30px;
-  padding-left: 25px;
-  color: #555;
-  font-size: 17px;
-  line-height: 1.6;
-}
-
-ul li {
-  margin-bottom: 14px;
-  position: relative;
-}
-
-ul li::before {
-  content: "🌟";
-  position: absolute;
-  left: -25px;
-  top: 0;
+p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 40px;
 }
 
 button {
@@ -93,7 +78,7 @@ button:hover {
   box-shadow: 0 12px 25px rgba(255,111,97,0.5);
 }
 
-/* Floating bubbles for whimsy */
+/* Optional floating bubbles for whimsy */
 .bubble {
   position: absolute;
   border-radius: 50%;
@@ -106,28 +91,26 @@ button:hover {
   0% { transform: translateY(100vh) translateX(0) rotate(0deg); }
   100% { transform: translateY(-150px) translateX(50px) rotate(360deg); }
 }
-  
+
 </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>Before We Begin 😄</h1>
-  <ul>
-    <li>Confirm you've read this information about Dr. Elara.</li>
-    <li>Dr. Elara is not designed for people under 18 years old.</li>
-    <li>This is a supportive AI therapist; it does not replace professional medical or psychological help.</li>
-    <li>Your conversations are private but may be stored locally for better interaction.</li>
-    <li>Use the app responsibly and understand that it provides guidance and conversation, not diagnosis.</li>
-  </ul>
-  <button onclick="proceed()">I Understand 🚀</button>
+  <h1>You're All Set! 🎉</h1>
+  <p>You are now ready to enter your session with Dr. Elara.<br>Click below to start chatting.</p>
+  <button onclick="startSession()">Start Session</button>
 </div>
 
-<script>
-function proceed(){
-  // Redirect to the next page (e.g., name input page)
-  window.location.href = "welcome.html"; // Replace with your actual next page URL
+<script>function startSession(){
+  // Mark setup as complete
+  localStorage.setItem("setupComplete", "true");
+
+  // Redirect to chat and replace history so user cannot go back
+  window.location.replace("name.html");
 }
+
+
 </script>
 
 </body>
